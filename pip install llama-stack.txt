@@ -1,0 +1,11 @@
+pip install llama-stack
+
+pip install llama-stack -U
+
+llama model list
+
+llama model list --show-all
+
+llama model download --source meta --model-id  MODEL_ID
+
+https://llama4.llamameta.net/*?Policy=eyJTdGF0ZW1lbnQiOlt7InVuaXF1ZV9oYXNoIjoibmN1bzA1cDJrYTR4b281aWw5czJ0aDZxIiwiUmVzb3VyY2UiOiJodHRwczpcL1wvbGxhbWE0LmxsYW1hbWV0YS5uZXRcLyoiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3ODA1MTY3Mzd9fX1dfQ__&Signature=u9%7ENLTshE8EZwKDN8KVaKuIhDGoyoaHt-PJo-lVu9M7ld4hgM%7EuforJC72NsMCF%7EK0%7EBmVe4sjCo4MB2hyExuTset3T-pHGEU40q8Vx4ZWd33FAItE-T2kFTupxrvKRw8c7mCKNVMOIqxP3MnUJUCG6kg%7E0OeSH%7ESBQG2NkhnIGHoFy8Qf9KNoXEFVib452UFzOY4iurXDixLd7ESS8cXU12ZbHYAroUdXzIoenyqnJYNiWBP6Npnk7ZhgtPJZ8Eifg5z4jo1UaVbf2mJaL3JkrTzQLX2BmFQAUmtdOUfVWZGtNz3-UUkW%7EPdDjvcg8NqQ0c6Qyna90osPmVxTjuVQ__&Key-Pair-Id=K15QRJLYKIFSLZ&Download-Request-ID=3559453917567928
