@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MARYAM YAMNA AI</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>MARYAM YAMNA AI</h1>
+      <p class="subtitle">Chat with the Llama assistant.</p>
+
+      <section id="chat" class="chat" aria-live="polite"></section>
+
+      <form id="chat-form" class="chat-form">
+        <label for="message" class="visually-hidden">Message</label>
+        <input id="message" name="message" type="text" placeholder="Ask anything..." required />
+        <button type="submit">Send</button>
+      </form>
+    </main>
+
+    <script>
+      const form = document.getElementById('chat-form');
+      const messageInput = document.getElementById('message');
+      const chatContainer = document.getElementById('chat');
+
+      function addMessage(role, text) {
+        const message = document.createElement('div');
+        message.className = `message ${role}`;
+        message.textContent = `${role === 'user' ? 'You' : 'Llama'}: ${text}`;
+        chatContainer.appendChild(message);
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+      }
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const message = messageInput.value.trim();
+        if (!message) return;
+
+        addMessage('user', message);
+        messageInput.value = '';
+        messageInput.focus();
+
+        try {
+          const response = await fetch('/api/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message })
+          });
+
+          const data = await response.json();
+
+          if (!response.ok) {
+            addMessage('bot', data.error || 'Something went wrong.');
+            return;
+          }
+
+          addMessage('bot', data.reply);
+        } catch (_error) {
+          addMessage('bot', 'Unable to connect to the server.');
+        }
+      });
+    </script>
+  </body>
+</html>
