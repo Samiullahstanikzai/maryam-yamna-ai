@@ -1,0 +1,25 @@
+{
+  "name": "maryam-yamna-ai",
+  "version": "1.0.0",
+  "description": "MARYAM YAMNA Website with Llama AI Integration",
+  "main": "server.js",
+  "scripts": {
+    "test": "node --test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Samiullahstanikzai/maryam-yamna-ai.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Samiullahstanikzai/maryam-yamna-ai/issues"
+  },
+  "homepage": "https://github.com/Samiullahstanikzai/maryam-yamna-ai#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
